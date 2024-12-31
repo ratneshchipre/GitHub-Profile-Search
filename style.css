@@ -1,0 +1,633 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --heading1-color: linear-gradient(to right, #8e9eab, #eef2f3);
+    --heading2-color: linear-gradient(to left, #00d2ff, #3a7bd5);
+    --base-color: #151B23;
+    --base2-color: #0D1117;
+    --text-color: #fafafa;
+    --primary-color: #6e7781;
+    --border-color: #a1a1a1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('assets/dark space.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+}
+
+.heading {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    background: var(--heading1-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Poppins, 'sans-serif';
+}
+
+.heading span {
+    background: var(--heading2-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Poppins, 'sans-serif';
+}
+
+.lower-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 40rem;
+    height: 30rem;
+    border-radius: 1rem;
+    border: 2px solid #8e9eab;
+    overflow: hidden;
+}
+
+.upper-container {
+    width: 40rem;
+    height: 22rem;
+    background-color: var(--base-color);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin-top: -6rem;
+}
+
+.search-input input {
+    height: 2rem;
+    width: 20rem;
+    background-color: var(--base2-color);
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 1.2rem 0.5rem 1.2rem 2.8rem;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    transition: border 0.1s ease;
+}
+
+.search-input input:hover {
+    border: 1px solid #1F6FEB;
+}
+
+.search-input input:focus {
+    border: 1px solid #1F6FEB;
+}
+
+.search-input i {
+    position: absolute;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-right: 16.8rem;
+    margin-top: 0.7rem;
+}
+
+.profile-pic-bg {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    left: 0;
+    margin: -2rem 0 0 3rem;
+    overflow: hidden;
+}
+
+.profile-pic-bg img {
+    width: 8rem;
+}
+
+.name-username {
+    position: absolute;
+    width: 13rem;
+    height: auto;
+    margin-left: -20.85rem;
+    margin-top: 7rem;
+}
+
+.name-username p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.name-username :last-child {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+.followers {
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    padding: 0.85rem 0.25rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base2-color);
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+} 
+
+.followers :last-child {
+    font-size: 1rem;
+    color: var(--text-color);
+    border: none;
+}
+
+.following {
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    padding: 0.85rem 0.25rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base2-color);
+    margin-top: 1.5rem;
+    margin-left: 26rem;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+} 
+
+.following :last-child {
+    font-size: 1rem;
+    color: var(--text-color);
+    border: none;
+}
+
+.public-repos {
+    position: absolute;
+    width: auto;
+    height: 3rem;
+    padding: 0.85rem 0.25rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base2-color);
+    margin-top: 5.8rem;
+    margin-left: 1.5rem;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.public-repos :last-child {
+    font-size: 1rem;
+    color: var(--text-color);
+    border: none;
+}
+
+.followers p, .following p, .public-repos p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    border-right: 1px solid ;
+    padding-right: 0.8rem;
+}
+
+.user-bio {
+    position: absolute;
+    width: 14rem;
+    height: auto;
+    margin-top: 11.5rem;
+    margin-right: 19.75rem;
+    color: var(--text-color);
+}
+
+.location {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base2-color);
+    margin-top: 17rem;
+    left: 3rem;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.location i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.location p {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.repo-container {
+    position: absolute;
+    width: auto;
+    height: auto;
+    margin-left: 20.3rem;
+    margin-top: 5.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.repo-div {
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: var(--base2-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    left: 2.5rem;
+}
+
+.js-repo {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 660px){
+    body {
+        background-position: center;
+    }
+
+    .lower-container {
+        width: 35rem;
+    }
+
+    .upper-container {
+        width: 35rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .search-input {
+        position: absolute;
+        margin-right: 1rem;
+    }
+
+    .search-input input {
+        position: absolute;
+        width: 15rem;
+        height: 0.5rem;
+    }
+
+    .search-input i {
+        position: absolute;
+        margin-left: 5rem;
+    }
+
+    .profile-pic-bg {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .profile-pic-bg img {
+        width: 7rem;
+    }
+
+    .name-username {
+        position: relative;
+        left: 1rem;
+        width: 10rem;
+        top: -1rem;
+    }
+
+    .name-username p {
+        font-size: 1.3rem;
+    }
+
+    .user-bio {
+        font-size: 0.95rem;
+        left: 3.15rem;
+    }
+
+    .followers {
+        height: 2.5rem;
+    }
+
+    .followers :last-child {
+        font-size: 0.9rem;
+    }
+
+    .following {
+        height: 2.5rem;
+        right: 2rem;
+    }
+
+    .following :last-child {
+        font-size: 0.9rem;
+    }
+
+    .public-repos {
+        height: 2.5rem;
+    }
+
+    .public-repos p {
+        font-size: 0.9rem;
+    }
+
+    .public-repos :last-child {
+        font-size: 0.9rem;
+    }
+
+    .repo-div {
+        margin-right: 2.5rem;
+        width: auto;
+    }
+
+    .js-repo {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media screen and (max-width: 580px){
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .lower-container {
+        width: 30rem;
+    }
+
+    .upper-container {
+        width: 30rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .search-input {
+        position: absolute;
+        margin-left: 2rem;
+    }
+
+    .search-input input {
+        position: absolute;
+        width: 12rem;
+        height: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .search-input i {
+        position: absolute;
+        margin-left: 8rem;
+        margin-top: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .profile-pic-bg {
+        width: 6rem;
+        height: 6rem;
+        margin-left: 2.5rem;
+    }
+
+    .profile-pic-bg img {
+        width: 6rem;
+    }
+
+    .name-username {
+        position: relative;
+        left: 2rem;
+        width: 8rem;
+        top: -2rem;
+    }
+
+    .name-username p {
+        font-size: 1.3rem;
+    }
+
+    .user-bio {
+        font-size: 0.95rem;
+        left: 2.65rem;
+    }
+
+    .location {
+        left: 2.5rem;
+    }
+
+    .followers {
+        height: 2.5rem;
+        margin-right: 1rem;
+        margin-top: 1.2rem;
+    }
+
+    .followers :last-child {
+        font-size: 0.85rem;
+    }
+
+    .following {
+        height: 2.5rem;
+        right: 2rem;
+        margin-top: 1.2rem;
+    }
+
+    .following :last-child {
+        font-size: 0.85rem;
+    }
+
+    .public-repos {
+        height: 2.5rem;
+        margin-top: 5.2rem;
+    }
+
+    .followers p, .following p {
+        font-size: 0.9rem;
+    }
+
+    .public-repos p {
+        font-size: 0.85rem;
+    }
+
+    .public-repos :last-child {
+        font-size: 0.85rem;
+    }
+
+    .repo-div {
+        margin-right: 5.5rem;
+        margin-top: -0.6rem;
+        width: 7rem;
+    }
+
+    .js-repo {
+        font-size: 0.85rem;
+    }
+
+} 
+
+@media screen and (max-width: 500px){
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .lower-container {
+        top: -2rem;
+        width: 21rem;
+        height: 38rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 4rem;
+    }
+
+    .upper-container {
+        width: 21rem;
+        height: 30rem;
+    }
+
+    .heading {
+        margin-bottom: 2.5rem;
+        font-size: 1.8rem;
+    }
+
+    .search-input {
+        position: absolute;
+        margin-left: 1.6rem;
+        top: -0.5rem;
+    }
+
+    .search-input input {
+        position: absolute;
+        width: 12rem;
+        height: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .search-input i {
+        position: absolute;
+        margin-left: 8rem;
+        margin-top: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .profile-pic-bg {
+        width: 6rem;
+        height: 6rem;
+        margin-left: 2.3rem;
+        top: 0.6rem;
+    }
+
+    .profile-pic-bg img {
+        width: 6rem;
+    }
+
+    .name-username {
+        position: relative;
+        text-align: center;
+        left: 14.4rem;
+        width: 15rem;
+        top: -5.8rem;
+    }
+
+    .name-username p {
+        font-size: 1.3rem;
+    }
+
+    .user-bio {
+        font-size: 0.95rem;
+        left: 2rem;
+        text-align: center;
+        top: -5.3rem;
+        width: 17rem;
+    }
+
+    .location {
+        top: -4rem;
+        left: 1.4rem;
+        padding: 0.68rem 1rem;
+    }
+
+    .location p {
+        font-size: 0.9rem;
+    }
+
+    .location i {
+        font-size: 0.85rem;
+    }
+
+    .followers {
+        height: 2.5rem;
+        left: -0.2rem;
+        margin-top: 9.8rem;
+    }
+
+    .followers :last-child {
+        font-size: 0.85rem;
+    }
+
+    .following {
+        height: 2.5rem;
+        right: 1.3rem;
+        top: 8.6rem;
+    }
+
+    .following :last-child {
+        font-size: 0.85rem;
+    }
+
+    .public-repos {
+        height: 2.5rem;
+        margin-top: 16rem;
+        left: -0.1rem;
+    }
+
+    .followers p, .following p {
+        font-size: 0.9rem;
+    }
+
+    .public-repos p {
+        font-size: 0.85rem;
+    }
+
+    .public-repos :last-child {
+        font-size: 0.85rem;
+    }
+
+    .repo-div {
+        display: flex;
+        top: 14rem;
+        left: -7.95rem;
+        width: 17rem;
+    }
+
+    .js-repo {
+        font-size: 0.85rem;
+        width: 100%;
+    }
+}
